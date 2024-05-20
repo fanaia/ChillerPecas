@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: auto;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+      }
+      div,
+      table {
+        border: 0px solid black;
+      }
+      div {
+        padding: 1px;
+      }
+      .container {
+        position: relative;
+        width: 800px;
+        margin: 30px;
+      }
+      .logo {
+        float: left;
+        width: 120px;
+      }
+      .chiller-info {
+        position: absolute;
+        text-align: right;
+        float: right;
+        right: 0;
+        top: 10px;
+        font-size: 11px;
+      }
+      .proposta {
+        clear: both;
+        margin-top: 20px;
+        float: left;
+      }
+      .cliente-info {
+        clear: both;
+        margin-top: 20px;
+        float: left;
+        display: inline-block;
+      }
+      .itens-proposta {
+        clear: both;
+        margin-top: 20px;
+        display: inline-block;
+        width: 100%;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table th {
+        background-color: #175aab;
+        color: white;
+      }
+      table tr:nth-child(even) {
+        background-color: #d6eaf8;
+      }
+      table tr:nth-child(odd) {
+        background-color: #ebf5fa;
+      }
+      th,
+      td {
+        padding: 5px 3px;
+      }
+      .subtotal,
+      .frete,
+      .difal,
+      .icms-st,
+      .total {
+        text-align: right;
+        font-weight: bold;
+      }
+      .vencimentos {
+        float: left;
+        width: 250px;
+        clear: both;
+        margin-top: 20px;
+        display: inline-block;
+      }
+      .outras-info {
+        float: left;
+        clear: both;
+        margin-top: 20px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="logo.jpg" style="width: 100%" />
+      </div>
+      <div class="proposta" style="font-size: 20px; font-weight: bold">Proposta No 8</div>
+      <div class="cliente-info">
+        <div style="font-size: 15px; font-weight: bold; margin-bottom: 10px">
+          Informações do Cliente
+        </div>
+        <div>
+          <div style="margin-bottom: 5px">
+            <div style="font-weight: bold">DENILSON LUIS SILVA DO ROZARIO</div>
+            <div>CPF/CNPJ: 123.456.789-00</div>
+            <div>E-mail: denilson_rozario@yahoo.com.br</div>
+          </div>
+          <div>Rua Belterra, 19 - Guadalupe</div>
+          <div>Rio de Janeiro - RJ - CEP: 21670-000</div>
+        </div>
+      </div>
+      <div class="chiller-info">
+        <div style="margin-bottom: 5px">
+          <div style="font-size: 16px; font-weight: bold">
+            CHILLER COMERCIO DE PEÇAS E ACESSÓRIOS LTDA
+          </div>
+          <div style="font-weight: bold; font-size: 13px">www.chillerpecas.com.br</div>
+        </div>
+        <div style="margin-bottom: 5px">
+          <div>CNPJ: 35.028.609/0001-53</div>
+          <div>Inscrição Estadual: 126.847.127.115</div>
+        </div>
+        <div>RUA SERRA DE BOTUCATU, 1424 - EDIF 1426</div>
+        <div>VILA GOMES CARDIM</div>
+        <div>São Paulo - SP - CEP: 03317-001</div>
+        <div>Telefone: (11) 2918-8119</div>
+      </div>
+      <div class="itens-proposta">
+        <div style="font-size: 15px; font-weight: bold; margin-bottom: 10px">Itens da Proposta</div>
+        <div>
+          <table>
+            <tr style="font-weight: bold; font-size: 10px">
+              <th style="text-align: left">Produto</th>
+              <th style="width: 57px">NCM</th>
+              <th style="width: 57px">Quant.</th>
+              <th style="width: 57px">Valor Unit.</th>
+              <th style="width: 80px">Valor Total</th>
+            </tr>
+            <tr>
+              <td>Válvula Tanque De Serviço 1/4&quot; SAE X 3/8&quot; NPT</td>
+              <td style="text-align: center">8481.80.29</td>
+              <td style="text-align: center">5,00 UN</td>
+              <td style="text-align: center">78,90</td>
+              <td style="text-align: right">394,50</td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  text-align: right;
+                  font-weight: bolder;
+                  background-color: #fff;
+                  padding-right: 10px;
+                  font-size: 14px;
+                "
+                colspan="4"
+              >
+                Subtotal (produtos)
+              </td>
+              <td
+                style="
+                  text-align: right;
+                  font-weight: bold;
+                  font-size: 14px;
+                  background-color: #d6eaf8;
+                "
+              >
+                394,50
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  text-align: right;
+                  font-weight: bolder;
+                  background-color: #fff;
+                  padding-right: 10px;
+                "
+                colspan="4"
+              >
+                Frete
+              </td>
+              <td style="text-align: right; background-color: #d6eaf8">100,00</td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  text-align: right;
+                  font-weight: bolder;
+                  background-color: #fff;
+                  padding-right: 10px;
+                "
+                colspan="4"
+              >
+                DIFAL + FCP
+              </td>
+              <td style="text-align: right; background-color: #d6eaf8">49,45</td>
+            </tr>
+            <!-- <tr>
+              <td
+                style="
+                  text-align: right;
+                  font-weight: bolder;
+                  background-color: #fff;
+                  padding-right: 10px;
+                "
+                colspan="4"
+              >
+                ICMS ST
+              </td>
+              <td style="text-align: right; background-color: #d6eaf8">0,00</td>
+            </tr> -->
+            <tr>
+              <td
+                style="
+                  text-align: right;
+                  font-weight: bolder;
+                  background-color: #fff;
+                  font-size: 16px;
+                  padding-right: 10px;
+                "
+                colspan="4"
+              >
+                Total R$
+              </td>
+              <td
+                style="
+                  text-align: right;
+                  font-size: 16px;
+                  font-weight: bold;
+                  background-color: #d6eaf8;
+                "
+              >
+                543,95
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="vencimentos">
+        <div style="margin-bottom: 10px">
+          <label style="font-size: 15px; font-weight: bold">Vencimentos</label> A Vista
+        </div>
+        <div>
+          <table style="width: 160px">
+            <tr>
+              <td
+                style="font-weight: bold; text-align: right; width: 80px; background-color: #d6eaf8"
+              >
+                Parcela
+              </td>
+              <td style="text-align: right; background-color: #ebf5fa">1</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold; text-align: right; background-color: #d6eaf8">
+                Vencimento
+              </td>
+              <td style="text-align: right; background-color: #ebf5fa">29/04/202</td>
+            </tr>
+            <tr>
+              <td style="font-weight: bold; text-align: right; background-color: #d6eaf8">Valor</td>
+              <td style="text-align: right; background-color: #ebf5fa">R$ 1.632,95</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="outras-info">
+        <div style="font-size: 15px; font-weight: bold; margin-bottom: 10px">
+          Outras Informações
+        </div>
+        <div>
+          <div><label style="font-weight: bold">Data da Proposta:</label> 29/04/2024</div>
+          <div><label style="font-weight: bold">Previsão de Faturamento:</label> 29/04/2024</div>
+          <div><label style="font-weight: bold">Previsão de Entrega:</label> 29/04/2024</div>
+          <div style="margin-top: 10px; font-style: italic">
+            <div><label style="font-weight: bold">Valor do DIFAL:</label> R$ 39,56</div>
+            <div><label style="font-weight: bold">Valor do FCP:</label> R$ 9,89</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
