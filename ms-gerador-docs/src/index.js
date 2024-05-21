@@ -1,35 +1,36 @@
 const { apiRetaguarda } = require("./config/apiRetaguarda");
 const logger = require("./config/logger");
-const invoiceService = require("./services/invoiceService");
-const osService = require("./services/omie/osService");
+const geradorDocsService = require("./services/geradorDocsService");
+const pedidosService = require("./services/omie/pedidosService");
 
-const checkOSs = async (empresa) => {
+const checkPedidos = async (empresa) => {
   try {
-    // console.log(`Verificando OSs da empresa ${empresa.nome}...`);
-    const oss = await osService.listarOS(empresa.authOmie);
-    // console.log(`Total de OSs encontradas da empresa ${empresa.nome}: ${oss.length}`);
+    console.log(`Verificando Pedidos da empresa ${empresa.nome}...`);
+    const pedidos = await pedidosService.listar(empresa.authOmie);
+    // console.log(pedidos);
+    console.log(`Total de Pedidos encontrados da empresa ${empresa.nome}: ${pedidos.length}`);
 
-    for (const os of oss) {
-      // console.log(`Processar OS ${os.Cabecalho.nCodOS}...`);
-      await invoiceService.gerarInvoice(empresa.authOmie, os.Cabecalho.nCodOS);
+    for (const pedido of pedidos) {
+      console.log(`Processar Pedido ${pedido.cabecalho.codigo_pedido}...`);
+      await geradorDocsService.gerarDoc(empresa.authOmie, pedido.cabecalho.codigo_pedido);
     }
   } catch (error) {
-    logger.error(`Erro checkOSs: ${error}`);
+    logger.error(`Erro checkPedidos: ${error}`);
   } finally {
-    // console.log(`Verificação de OSs da empresa ${empresa.nome} finalizada.`);
-    setTimeout(() => checkOSs(empresa), 2 * 60 * 1000);
+    console.log(`Verificação de Pedidos da empresa ${empresa.nome} finalizada.`);
+    setTimeout(() => checkPedidos(empresa), 60 * 1000);
   }
 };
 
 const app = async () => {
-  console.log("Iniciando MS-EUROPARTNER-INVOICE...");
+  console.log("Iniciando ms-gerador-docs...");
 
   try {
     const resEmpresas = await apiRetaguarda.get(`empresas?ativo=true`);
     const empresas = resEmpresas.data;
 
     for (const empresa of empresas) {
-      checkOSs(empresa);
+      checkPedidos(empresa);
     }
   } catch (error) {
     console.error(error);
