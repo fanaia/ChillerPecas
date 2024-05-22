@@ -49,7 +49,7 @@ const geradorDocsService = {
         pedido.cabecalho.numero_pedido,
         pdfBuffer
       );
-      console.log(`Anexo incluído no pedido ${codigoPedido}`);
+      // console.log(`Anexo incluído no pedido ${codigoPedido}`);
 
       // const observacao = await geradorDocsService.enviarEmail(
       //   authOmie,
