@@ -35,7 +35,7 @@ const Login = () => {
           <div className="card mt-5 shadow-lg">
             <div className="card-body">
               <h2 className="text-center mb-4">
-                Retaguarda <br className="d-sm-none" /> Europartner-Omie
+                Retaguarda <br className="d-sm-none" /> Chiller-Omie
               </h2>
               <h3 className="text-center mb-4">Autenticação</h3>
               {msg && (
