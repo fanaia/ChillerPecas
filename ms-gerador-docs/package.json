@@ -1,5 +1,5 @@
 {
-  "name": "ms-invoice-europartner",
+  "name": "ms-gerador-docs",
   "version": "1.0.0",
   "description": "Micro-Serviço de geração de Invoice Personalizada Integrado ao Omie",
   "main": "index.js",
