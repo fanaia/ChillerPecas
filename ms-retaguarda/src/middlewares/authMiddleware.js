@@ -10,7 +10,7 @@ const authMiddleware = async (req, res, next) => {
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, async (err, user) => {
     if (err) return res.status(403).json({ error: "Token inválido" });
 
-    console.log(`User: ${JSON.stringify(user)}`);
+    // console.log(`User: ${JSON.stringify(user)}`);
     const { _id, email, senha } = user;
     const usuario = await Usuario.findOne({ _id });
 
