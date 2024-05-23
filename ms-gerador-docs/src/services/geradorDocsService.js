@@ -43,13 +43,14 @@ const geradorDocsService = {
       // const renderedAssunto = ejs.render(templateEmailAssunto, variaveisTemplates);
       // const renderedCorpo = ejs.render(templateEmailCorpo, variaveisTemplates);
 
+      console.log("Gerando PDF...");
       await geradorDocsService.incluirAnexo(
         authOmie,
         codigoPedido,
         pedido.cabecalho.numero_pedido,
         pdfBuffer
       );
-      // console.log(`Anexo incluído no pedido ${codigoPedido}`);
+      console.log(`Anexo incluído no pedido ${codigoPedido}`);
 
       // const observacao = await geradorDocsService.enviarEmail(
       //   authOmie,
