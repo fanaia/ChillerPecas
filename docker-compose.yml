@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  gerador-docs:
+    build: ./ms-gerador-docs
+    ports:
+      - "3020:3020"
+    depends_on:
+      - db
+
+  retaguarda:
+    build: ./ms-retaguarda
+    ports:
+      - "3010:3010"
+    depends_on:
+      - db
+
+  ui-retaguarda:
+    build: ./ui-retaguarda
+    ports:
+      - "3000:3000"
+    depends_on:
+      - gerador-docs
+      - retaguarda
+
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - gerador-docs
+      - retaguarda
+      - ui-retaguarda
+
+volumes:
+  mongo-data:
