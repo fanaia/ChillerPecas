@@ -30,6 +30,7 @@ const app = async () => {
     const empresas = resEmpresas.data;
 
     for (const empresa of empresas) {
+      console.log("Verificando pedidos da empresa: ", empresa.nome);
       checkPedidos(empresa);
     }
   } catch (error) {

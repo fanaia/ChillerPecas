@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3020
 
 # Comando para iniciar a aplicação
-CMD ["npm", "start"]
+# CMD ["npm", "start"]

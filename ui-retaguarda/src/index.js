@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -13,7 +13,7 @@ import TestApi from "./components/TestApi";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/testApi" element={<TestApi />} />
         <Route path="/" element={<Login />} />
@@ -33,6 +33,6 @@ root.render(
           }
         />
       </Routes>
-    </Router>
+    </BrowserRouter>
   </React.StrictMode>
 );

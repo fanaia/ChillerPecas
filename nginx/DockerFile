@@ -1,5 +1,5 @@
 # Use a imagem base do Nginx
-FROM nginx:latest
+FROM nginx:1.27.0
 
 # Copie o arquivo de configuração do Nginx para o diretório de configuração do Nginx no contêiner
 COPY nginx.conf /etc/nginx/nginx.conf
